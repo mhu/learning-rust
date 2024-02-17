@@ -2,7 +2,6 @@ use std::env;
 use std::fs;
 use std::path::Path;
 
-
 fn main() {
     let args: Vec<String> = env::args().collect();
 
@@ -14,8 +13,7 @@ fn main() {
     }
 
     for file_path in args.iter().skip(1) {
-        let contents = fs::read_to_string(file_path)
-            .expect("No such file or directory");
+        let contents = fs::read_to_string(file_path).expect("No such file or directory");
 
         print!("{}", contents);
     }
